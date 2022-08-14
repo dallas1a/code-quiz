@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../code-quiz/styles/style.css"/>
+    <title>Coding Skill Quiz</title>
+  </head>
+  <body>
+
+   <section>
+      <div class="start active">
+        <h1>Coding Skill Quiz</h1>
+          <p>
+            Note: This is a timed coding assessment. Timer starts after you click the start button. Selecting a question answer choice directs you to the next question. You can not 
+            return to another question. The game is over when the timer reaches 0 or all questions are answered. Be sure to save your score with your 
+            initials to know your last best. Scoring is based on time left on the timer.
+          </p>
+          <p>
+            *Important: 10 Seconds will be removed from the timer for each wrong answer choice.*
+          </p>
+          <button id="start-button">Start Quiz</button>
+      </div>
+     
+      <div class="questions">
+        <h2 class="question"></h2>
+        <button class="options"></button>
+        <button class="options"></button>
+        <button class="options"></button>
+        <button class="options"></button>
+      </div>
+      
+      <form>
+        <div class="user">
+          <h3>Game Over <span class="score"></span></h3>
+          <p>Please Enter Your Initials to Save Your Score</p>
+          <input class="user-input" type="text" placeholder="enter initials">
+          <button class="submit">Save Score</button>
+          <button class="home">Home</button>
+        </div>
+      </form>
+     
+      <section class="high-scores">
+        <div>
+          <h3>High Scores</h3>
+          <p id="userScore">
+            <button class="home">Home</button>
+          </p>
+        </div>
+      </section>
+      
+    </section>
+
+    
+    <footer>
+        <a href="#my-high-scores" class="high-scores"><h3>View High Scores</h3></a>
+        <p>Score: <span class="score"></span></p>
+        <h3>Countdown: <span id="countdown"></span></h3>
+      </footer>
+
+    <script src="../code-quiz/scripts/script.js"></script>
+    
+    </body>
+    </html>
