@@ -1,3 +1,4 @@
+//Set initial variables for the quiz
 var startQuiz= document.querySelector(".start");
 var startBtn = document.querySelector("#start-button");
 
@@ -21,7 +22,7 @@ var countdown = 60;
 var allowedHighScores = 10;
 var high_scores = 0;
 
-
+//sets all qustions, options for answers and the correct answer and puts them in the questions array variable.
 var questions = [
 
   {
@@ -57,7 +58,7 @@ var questions = [
   
 ]
 
-
+//creates an event listener for the start button  to start the quiz on button click. 
 startBtn.addEventListener("click", function() {
 
   startQuiz.classList.remove("active");
@@ -69,7 +70,8 @@ startBtn.addEventListener("click", function() {
   showQuestions();
 })
 
-
+// displays the questions variable array, then goes through each question going to the next question after each 
+// answer selection, removing 10 seconds for each incorrect and moving to the next question .
 function showQuestions() {
   questionH2.textContent = questions[currentIndex].question;
 
@@ -95,7 +97,7 @@ function showQuestions() {
 
 }
 
-
+//function to move to next question 
 function nextQuestion() {
 
   if (currentIndex === (questions.length - 1)) {
@@ -115,7 +117,7 @@ function nextQuestion() {
   }
 }
 
-
+// starts timer is start button is clicked 
 function startTimer() {
   countdownDisplay.textContent = countdown;
 
@@ -131,7 +133,7 @@ function startTimer() {
 
 }
 
-
+// moves from questions arrat and saves a users inputted initials on button submit click. 
 function saveUserInitials() {
   allQuestions.classList.remove("active");
   initialsSavedScore .classList.add("active");
@@ -140,7 +142,7 @@ function saveUserInitials() {
 
 }
 
-
+//if submit button is clicked, user inputted initials are saved with that score. 
 submitBtn.addEventListener("click", function() {
   var userInitials = input.value;
   
@@ -149,7 +151,7 @@ submitBtn.addEventListener("click", function() {
   
   setScore(score, userInitials);
 })
-
+//listens for click on home button to bring you back to before startingt the quiz
 homeBtn.addEventListener("click", function() {
    
         startQuiz.classList.add("active");
@@ -160,7 +162,7 @@ homeBtn.addEventListener("click", function() {
 
 
 
-
+//sets score to countdown value and the user to the input.
 function setScore() {
   var score = countdown;
   localStorage.setItem("highscore", score);
@@ -168,7 +170,7 @@ function setScore() {
 
   getScore();
 }
-
+//gets score that was set and adds to the high scores for that user
 function getScore() {
   var quizScore = `
   <h2>` + localStorage.getItem("userInitials") + `'s highscore: <h2>
@@ -178,7 +180,7 @@ function getScore() {
 
   document.getElementById(".high-scores").innerHTML = quizScore;
 }
-
+//resets score for new input
 function resetScore(){
   localStorage.setItem("highscore", "");
   localStorage.setItem("user-input", "");

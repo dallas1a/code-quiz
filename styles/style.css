@@ -7,7 +7,7 @@
   
   :root {
     --text-color:red;
-    --neutral: rgb(255, 255, 255);
+    --neutral: white;
     --shadow-active: rgb(190, 190, 190);
     --background-color: green;
     --generic-color:black;
